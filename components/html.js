@@ -7,7 +7,9 @@ const bodyStyle = {
   margin: 0,
   padding: 0,
   color: '#5b6888',
-  fontFamily: 'Roboto Slab, serif'
+  fontFamily: 'Roboto Slab, serif',
+  lineHeight: '23px',
+  fontSize: '16px'
 }
 
 module.exports = ({name, content}) => {
