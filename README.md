@@ -1,6 +1,6 @@
-# The styled theme
+# Clean Documentation Theme
 
-![](screenshot.png)
+![](mockup.png)
 
 This is a theme for [documentationjs](https://github.com/documentationjs):
 
