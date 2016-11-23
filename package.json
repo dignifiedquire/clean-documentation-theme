@@ -1,0 +1,29 @@
+{
+  "name": "styled-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "concat-stream": "^1.5.2",
+    "lodash": "^4.17.2",
+    "radium": "^0.18.1",
+    "radium-bootstrap-grid": "^0.1.3",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-pure-render": "^1.0.2",
+    "vinyl": "^2.0.1",
+    "vinyl-fs": "^2.4.4"
+  }
+}
