@@ -7,23 +7,36 @@ import {Container, Column, Row} from 'radium-bootstrap-grid'
 import Header from './header'
 import utils from '../utils'
 import Nav from './navigation'
-import {lineHeight} from '../constants'
+import {lineHeight, sansSerifFont} from './styles'
 
+const hasMembers = (doc) => {
+  const m = doc.members
+  return m.static.length > 0 ||
+         m.instance.length > 0 ||
+         (m.events && m.events.length > 0)
+}
 
 class App extends React.Component {
   render () {
-    const options = this.props.options
-    const docs = this.props.docs
+    const {options, docs} = this.props
     const containerStyle = {
-      paddingTop: `${lineHeight * 4}px`
+      paddingTop: lineHeight(4)
     }
+
     const contentStyle = {
-      fontFamily: 'Robot, sans-serif',
+      fontFamily: sansSerifFont,
       fontSize: '26px',
       fontWeight: 'bold'
     }
 
-    const md = utils(this.props.options, this.props.docs).md
+    const md = utils(options, docs).md
+    const navItems = docs.map((doc) => {
+      return {
+        name: doc.name,
+        members: hasMembers(doc) ? doc.members : null
+      }
+    })
+
     return (
       <StyleRoot>
         <Header name={options.name} version={options.version} />
@@ -31,7 +44,7 @@ class App extends React.Component {
         <Container style={containerStyle}>
           <Row>
             <Column sm={3} xsHidden>
-              <Nav items={docs.map((el) => el.name)} />
+              <Nav items={navItems} />
             </Column>
             <Column sm={8}>
               <Style scopeSelector='h2' rules={contentStyle} />

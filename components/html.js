@@ -3,12 +3,14 @@
 import React from 'react'
 import {Style} from 'radium'
 
+import {serifFont, textColor, lineHeight} from './styles'
+
 const bodyStyle = {
   margin: 0,
   padding: 0,
-  color: '#5b6888',
-  fontFamily: 'Roboto Slab, serif',
-  lineHeight: '23px',
+  color: textColor,
+  fontFamily: serifFont,
+  lineHeight: lineHeight(),
   fontSize: '16px'
 }
 
