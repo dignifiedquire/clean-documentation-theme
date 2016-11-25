@@ -157,6 +157,9 @@ const Param = Radium(({
             defaultVal={p.default}
             utils={utils} />
         </td>
+        <td dangerouslySetInnerHTML={{
+          __html: utils.md(p.description, true)
+        }} />
       </tr>
     ))
   }
