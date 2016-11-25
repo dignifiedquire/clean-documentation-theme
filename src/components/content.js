@@ -6,23 +6,36 @@ const {Style} = Radium
 const createUtils = require('../utils')
 const {sansSerifFont, monoFont, lineHeight, textColor} = require('./styles')
 
-const blockCodeStyle = {
-  fontFamily: monoFont,
-  display: 'block',
-  padding: '12px 15px 12px 15px',
-  borderRadius: '4px',
-  boxShadow: 'inset 0 0 0 1px rgba(0, 0, 0, 0.1)',
-  marginBottom: '30px',
-  position: 'relative',
-  overflowX: 'auto',
-  fontSize: '13px',
-  color: textColor
-}
-
 const contentStyles = {
   'h1, h2, h3, h4, h5, h6': {
     fontFamily: sansSerifFont,
     fontWeight: 'bold'
+  },
+  a: {
+    textDecoration: 'none',
+    color: '#00AAFF'
+  },
+  'pre > code': {
+    display: 'block',
+    padding: '12px 15px 12px 15px',
+    borderRadius: '4px',
+    boxShadow: 'inset 0 0 0 1px rgba(0, 0, 0, 0.1)',
+    marginBottom: '30px',
+    position: 'relative',
+    overflowX: 'auto',
+    fontSize: '13px',
+    color: textColor,
+    whiteSpace: 'pre'
+  },
+  code: {
+    fontFamily: monoFont,
+    display: 'inline',
+    fontSize: '13px',
+    fontWeight: '400',
+    margin: '0 2px',
+    padding: '1px 6px',
+    boxShadow: '0 0 0 1px #DDD',
+    whiteSpace: 'nowrap'
   },
   // Highlightjs Theme
   '.hljs-meta': {
@@ -62,7 +75,6 @@ const Signature = Radium(({member, utils}) => {
   return (
     <pre>
       <code
-        style={blockCodeStyle}
         dangerouslySetInnerHTML={content} />
     </pre>
   )
@@ -104,9 +116,97 @@ const Example = Radium(({caption, content, utils}) => {
       {renderedCaption}
       <pre>
         <code
-          style={blockCodeStyle}
           dangerouslySetInnerHTML={rendered} />
       </pre>
+    </div>
+  )
+})
+
+const Type = ({name, val, defaultVal, utils}) => {
+  let sig = `${name}: ${utils.formatType(val)}`
+  if (defaultVal) {
+    sig += ` (=${defaultVal})`
+  }
+
+  return (
+    <code dangerouslySetInnerHTML={{__html: sig}} />
+  )
+}
+
+const Param = Radium(({
+  name,
+  typeVal,
+  defaultVal,
+  description,
+  properties,
+  utils
+}) => {
+  const rendered = {
+    __html: utils.md(description, true)
+  }
+
+  let propertyList
+
+  if (properties && properties.length > 0) {
+    propertyList = properties.map((p) => (
+      <tr>
+        <td>
+          <Type
+            name={p.name}
+            val={p.type}
+            defaultVal={p.default}
+            utils={utils} />
+        </td>
+      </tr>
+    ))
+  }
+
+  return (
+    <div>
+      <tr>
+        <td>
+          <Type
+            name={name}
+            val={typeVal}
+            defaultVal={defaultVal}
+            utils={utils} />
+        </td>
+        <td
+          dangerouslySetInnerHTML={rendered} />
+      </tr>
+      {propertyList}
+    </div>
+  )
+})
+
+const Params = Radium(({params, utils}) => {
+  const thStyle = {
+    textAlign: 'left',
+    fontFamily: sansSerifFont
+  }
+
+  return (
+    <div>
+      <h4>Parameters</h4>
+      <table>
+        <thead>
+          <tr>
+            <th style={thStyle}>Name</th>
+            <th style={thStyle}>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {params.map((param) => (
+            <Param
+              name={param.name}
+              typeVal={param.type}
+              defaultVal={param.default}
+              description={param.description}
+              properties={param.properties}
+              utils={utils} />
+           ))}
+        </tbody>
+      </table>
     </div>
   )
 })
@@ -117,6 +217,9 @@ const SectionMember = Radium(({namespace, name, description, member, parent, uti
       <h3>{parent}.{name}</h3>
       <Signature member={member} utils={utils} />
       <Description content={description} utils={utils} />
+      {member.params ? (
+        <Params params={member.params} utils={utils} />
+      ) : null}
       {member.examples && member.examples.map((example) => (
         <Example
           name={example.caption}

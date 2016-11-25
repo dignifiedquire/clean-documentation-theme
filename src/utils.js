@@ -43,7 +43,7 @@ module.exports = function utils (options, comments) {
       } else if (section.kind !== 'function') {
         const type = getType(section)
         if (type) {
-          return `${section.name} : ${formatters.type(type)}`
+          return `${section.name}: ${formatters.type(type)}`
         }
 
         return section.name
