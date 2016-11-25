@@ -4,7 +4,6 @@ require('babel-register')
 const path = require('path')
 const File = require('vinyl')
 const vfs = require('vinyl-fs')
-const _ = require('lodash')
 const concat = require('concat-stream')
 const render = require('react-dom/server').renderToStaticMarkup
 const React = require('react')

@@ -2,11 +2,19 @@
   "name": "clean-documentation-theme",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "aegir-lint"
   },
-  "keywords": [],
+  "keywords": [
+    "doc",
+    "docs",
+    "documentation",
+    "documentation.js",
+    "jsdoc",
+    "jsdoc3",
+    "theme"
+  ],
   "author": "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -17,7 +25,6 @@
     "documentation": "^4.0.0-beta14",
     "github-slugger": "^1.1.1",
     "highlight.js": "^9.8.0",
-    "lodash": "^4.17.2",
     "radium": "^0.18.1",
     "radium-bootstrap-grid": "^0.1.3",
     "react": "^15.4.1",
@@ -25,5 +32,10 @@
     "react-pure-render": "^1.0.2",
     "vinyl": "^2.0.1",
     "vinyl-fs": "^2.4.4"
+  },
+  "devDependencies": {
+    "aegir": "^9.1.2",
+    "eslint-config-standard-react": "^4.2.0",
+    "eslint-plugin-react": "^6.7.1"
   }
 }

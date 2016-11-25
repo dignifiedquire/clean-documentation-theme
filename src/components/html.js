@@ -1,9 +1,9 @@
 'use strict'
 
-import React from 'react'
-import {Style} from 'radium'
+const React = require('react')
+const {Style} = require('radium')
 
-import {serifFont, textColor, lineHeight} from './styles'
+const {serifFont, textColor, lineHeight} = require('./styles')
 
 const bodyStyle = {
   margin: 0,
