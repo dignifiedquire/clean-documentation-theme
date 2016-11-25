@@ -4,7 +4,11 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "lint": "aegir-lint"
+    "test": "aegir-test --env node",
+    "lint": "aegir-lint",
+    "release": "aegir-release --env node",
+    "release-minor": "aegir-release --env node --type minor",
+    "release-major": "aegir-release --env node --type major"
   },
   "keywords": [
     "doc",
