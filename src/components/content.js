@@ -11,6 +11,18 @@ const contentStyles = {
     fontFamily: sansSerifFont,
     fontWeight: 'bold'
   },
+  h1: {
+    fontSize: '32px',
+    lineHeight: '42px'
+  },
+  h2: {
+    fontSize: '21px',
+    lineHeight: '27px'
+  },
+  h3: {
+    fontSize: '17px',
+    lineHeight: '22px'
+  },
   a: {
     textDecoration: 'none',
     color: '#00AAFF',
@@ -24,7 +36,7 @@ const contentStyles = {
     height: '100px',
     margin: '-80px 0 0'
   },
-  'pre > code': {
+  'pre.hljs, pre > code': {
     display: 'block',
     padding: '12px 15px 12px 15px',
     borderRadius: '4px',
@@ -246,9 +258,13 @@ const SectionMember = Radium(({namespace, name, description, member, parent, uti
 })
 
 const SectionGroup = Radium(({name, utils, members, parent}) => {
+  const style = {
+    textTransform: 'uppercase'
+  }
+
   return (
     <div>
-      <h4>{name}</h4>
+      <h2 style={style}>{name}</h2>
       {members.map((m) => (
         <SectionMember
           key={m.name}
@@ -273,12 +289,16 @@ const Section = Radium(({name, namespace, description, section, utils}) => {
     return members[key] && members[key].length > 0
   })
 
+  const style = {
+    marginBottom: lineHeight(4)
+  }
+
   return (
-    <div>
-      <h2>
+    <div style={style}>
+      <h1>
         <a className='anchor' name={namespace} />
         {name}
-      </h2>
+      </h1>
       <div
         dangerouslySetInnerHTML={{
           __html: utils.md(description)
