@@ -13,7 +13,16 @@ const contentStyles = {
   },
   a: {
     textDecoration: 'none',
-    color: '#00AAFF'
+    color: '#00AAFF',
+    ':hover': {
+      cursor: 'pointer'
+    }
+  },
+  'a.anchor:before': {
+    content: '""',
+    display: 'block',
+    height: '100px',
+    margin: '-80px 0 0'
   },
   'pre > code': {
     display: 'block',
@@ -217,7 +226,10 @@ const Params = Radium(({params, utils}) => {
 const SectionMember = Radium(({namespace, name, description, member, parent, utils}) => {
   return (
     <div>
-      <h3>{parent}.{name}</h3>
+      <h3 >
+        <a className='anchor' name={namespace} />
+        {parent}.{name}
+      </h3>
       <Signature member={member} utils={utils} />
       <Description content={description} utils={utils} />
       {member.params ? (
@@ -241,6 +253,7 @@ const SectionGroup = Radium(({name, utils, members, parent}) => {
         <SectionMember
           key={m.name}
           name={m.name}
+          namespace={m.namespace}
           description={m.description}
           parent={parent}
           member={m}
@@ -262,7 +275,10 @@ const Section = Radium(({name, namespace, description, section, utils}) => {
 
   return (
     <div>
-      <h2>{name}</h2>
+      <h2>
+        <a className='anchor' name={namespace} />
+        {name}
+      </h2>
       <div
         dangerouslySetInnerHTML={{
           __html: utils.md(description)

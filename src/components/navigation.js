@@ -101,7 +101,9 @@ const Item = Radium(({name, members, last}) => {
   return (
     <div>
       <li style={[style, itemStyle]}>
-        {name}
+        <a style={{color: textColor}} href={`#${name}`}>
+          {name}
+        </a>
       </li>
       {members ? (
         <li style={[style, membersStyle]}>
@@ -121,7 +123,9 @@ const Nav = ({items}) => {
     marginTop: lineHeight(2),
     fontFamily: sansSerifFont,
     fontWeight: 500,
-    fontSize: '18px'
+    fontSize: '18px',
+    height: '70vh',
+    overflowX: 'auto'
   }
 
   const listStyle = {
