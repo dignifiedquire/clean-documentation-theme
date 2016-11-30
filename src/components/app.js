@@ -44,7 +44,7 @@ const App = ({options, docs}) => {
           <Column md={3} sm={3} xsHidden msHidden style={navStyle}>
             <Nav items={navItems} />
           </Column>
-          <Column md={8} mdPush={4} sm={8} smPush={4} ms={12} xs={12}>
+          <Column md={8} mdPush={4} sm={8} smPush={4} ms={12} msPush={0} xsPush={0} xs={12} >
             <Content options={options} docs={docs} />
           </Column>
         </Row>

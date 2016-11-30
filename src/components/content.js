@@ -37,6 +37,7 @@ const contentStyles = {
     margin: '-80px 0 0'
   },
   'pre.hljs, pre > code': {
+    fontFamily: monoFont,
     display: 'block',
     padding: '12px 15px 12px 15px',
     borderRadius: '4px',
