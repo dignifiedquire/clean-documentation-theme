@@ -9,7 +9,7 @@
     "release": "aegir-release --env node",
     "release-minor": "aegir-release --env node --type minor",
     "release-major": "aegir-release --env node --type major",
-    "coverage": "aegir-coverage",
+    "coverage": "nyc npm test",
     "coverage-publish": "aegir-coverage publish"
   },
   "keywords": [
@@ -45,7 +45,15 @@
     "enzyme": "^2.6.0",
     "eslint-config-standard-react": "^4.2.0",
     "eslint-plugin-react": "^6.7.1",
+    "nyc": "^10.0.0",
     "react-addons-test-utils": "^15.4.1",
     "remark": "^6.2.0"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "report-dir": "./coverage"
   }
 }
