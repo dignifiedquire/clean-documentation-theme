@@ -19,6 +19,7 @@ before_install:
 script:
   - npm run lint
   - npm test
+  - npm run coverage
 
 before_script:
   - export DISPLAY=:99.0

@@ -8,7 +8,9 @@
     "lint": "aegir-lint",
     "release": "aegir-release --env node",
     "release-minor": "aegir-release --env node --type minor",
-    "release-major": "aegir-release --env node --type major"
+    "release-major": "aegir-release --env node --type major",
+    "coverage": "aegir-coverage",
+    "coverage-publish": "aegir-coverage publish"
   },
   "keywords": [
     "doc",
@@ -39,7 +41,11 @@
   },
   "devDependencies": {
     "aegir": "^9.1.2",
+    "chai": "^3.5.0",
+    "enzyme": "^2.6.0",
     "eslint-config-standard-react": "^4.2.0",
-    "eslint-plugin-react": "^6.7.1"
+    "eslint-plugin-react": "^6.7.1",
+    "react-addons-test-utils": "^15.4.1",
+    "remark": "^6.2.0"
   }
 }
