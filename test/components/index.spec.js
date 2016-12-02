@@ -8,4 +8,5 @@ describe('Components', () => {
   require('./source-link-test')
   require('./returns-test')
   require('./throws-test')
+  require('./extends-test')
 })

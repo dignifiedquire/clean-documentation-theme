@@ -7,6 +7,7 @@ const Utils = require('../../utils')
 const {lineHeight} = require('../styles')
 const SectionGroup = require('./section-group')
 const SourceLink = require('./source-link')
+const Extends = require('./extends')
 
 const Section = ({
   name,
@@ -39,6 +40,7 @@ const Section = ({
         dangerouslySetInnerHTML={{
           __html: utils.md(description)
         }} />
+      <Extends list={section.augments} utils={utils} />
       {memberTypes.map((type, i) => (
         <SectionGroup
           key={i}

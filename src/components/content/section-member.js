@@ -11,6 +11,7 @@ const Params = require('./params')
 const SourceLink = require('./source-link')
 const Returns = require('./returns')
 const Throws = require('./throws')
+const Extends = require('./extends')
 
 const SectionMember = ({
   namespace,
@@ -29,6 +30,7 @@ const SectionMember = ({
       </h3>
       <Signature member={member} utils={utils} />
       <Description content={description} utils={utils} />
+      <Extends list={member.augments} utils={utils} />
       <Params params={member.params} utils={utils} />
       <Returns list={member.returns} utils={utils} />
       <Throws list={member.throws} utils={utils} />
