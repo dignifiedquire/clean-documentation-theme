@@ -85,37 +85,62 @@ exports.contentStyles = {
     borderRadius: '4px'
   },
   // Highlightjs Theme
-  '.hljs-meta': {
-    color: '#666'
+  '.hljs': {
+    display: 'block',
+    overflowX: 'auto'
   },
-  '.hljs-comment': {
-    color: '#BBB'
+  '.hljs-comment, .hljs-quote': {
+    color: '#998',
+    fontStyle: 'italic'
   },
-  '.hljs-number': {
-    color: '#9B80FF'
+  '.hljs-keyword, .hljs-selector-tag, .hljs-subst': {
+    color: '#333',
+    fontWeight: 'bold'
   },
-  '.hljs-string': {
-    color: '#75DE00'
+  '.hljs-number, .hljs-literal, .hljs-variable, .hljs-template-variable, .hljs-tag .hljs-attr': {
+    color: '#008080'
   },
-  '.hljs-keyword, .hljs-function': {
-    color: '#F95FAA'
+  '.hljs-string, .hljs-doctag': {
+    color: '#d14'
   },
-  '.hljs-symbol, .hljs-class, .hljs-title, .hljs-literal': {
-    color: '#EEBA00'
-  },
-  '.hljs-params': {
-    color: '#444'
-  },
-  '.hljs-built_in': {
-    fontWeight: 500
+  '.hljs-title, .hljs-section, .hljs-selector-id': {
+    color: '#900',
+    fontWeight: 'bold'
   },
   '.hljs-subst': {
-    color: '#666'
+    fontWeight: 'normal'
   },
-  '.hljs-name': {
-    color: '#EEBA00'
+  '.hljs-type, .hljs-class .hljs-title': {
+    color: '#458',
+    fontWeight: 'bold'
   },
-  '.hljs-attr': {
-    fontWeight: 500
+  '.hljs-tag, .hljs-name, .hljs-attribute': {
+    color: '#000080',
+    fontWeight: 'normal'
+  },
+  '.hljs-regexp, .hljs-link': {
+    color: '#009926'
+  },
+  '.hljs-symbol, .hljs-bullet': {
+    color: '#990073'
+  },
+  '.hljs-built_in, .hljs-builtin-name': {
+    color: '#0086b3'
+  },
+  '.hljs-meta': {
+    color: '#999',
+    fontWeight: 'bold'
+  },
+  '.hljs-deletion': {
+    background: '#fdd'
+  },
+  '.hljs-addition': {
+    background: '#dfd'
+  },
+  '.hljs-emphasis': {
+    fontStyle: 'italic'
+  },
+  '.hljs-strong': {
+    fontWeight: 'bold'
   }
 }
