@@ -10,6 +10,7 @@ const Examples = require('./examples')
 const Params = require('./params')
 const SourceLink = require('./source-link')
 const Returns = require('./returns')
+const Throws = require('./throws')
 
 const SectionMember = ({
   namespace,
@@ -30,6 +31,7 @@ const SectionMember = ({
       <Description content={description} utils={utils} />
       <Params params={member.params} utils={utils} />
       <Returns list={member.returns} utils={utils} />
+      <Throws list={member.throws} utils={utils} />
       <Examples list={member.examples} utils={utils} />
     </div>
   )

@@ -7,4 +7,5 @@ describe('Components', () => {
   require('./app-test')
   require('./source-link-test')
   require('./returns-test')
+  require('./throws-test')
 })
