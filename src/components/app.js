@@ -32,7 +32,8 @@ const App = ({options, docs}) => {
 
   const navStyle = {
     position: 'fixed',
-    height: '80%'
+    height: '80%',
+    maxWidth: '300px'
   }
 
   return (
@@ -41,10 +42,18 @@ const App = ({options, docs}) => {
 
       <Container style={containerStyle}>
         <Row>
-          <Column md={3} sm={3} xsHidden msHidden style={navStyle}>
+          <Column
+            lg={3} md={3} sm={3}
+            xsHidden msHidden
+            style={navStyle}>
             <Nav items={navItems} />
           </Column>
-          <Column md={8} mdPush={4} sm={8} smPush={4} ms={12} msPush={0} xsPush={0} xs={12} >
+          <Column
+            lg={8} lgPush={4}
+            md={8} mdPush={4}
+            sm={8} smPush={4}
+            ms={12} msPush={0}
+            xsPush={0} xs={12} >
             <Content options={options} docs={docs} />
           </Column>
         </Row>
