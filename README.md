@@ -15,6 +15,29 @@
 
 It uses [React](https://facebook.github.io/react/) server side rendering with [Radium](https://github.com/FormidableLabs/radium/) for styling components.
 
+## Usage
+
+```bash
+$ npm install --save-dev clean-documentation-theme
+$ npm install --save-dev documentation
+```
+
+Add to your `package.json`
+
+```json
+"scripts": {
+  "docs": "documentation build --format html --theme node_modules/clean-documentation-theme --o docs
+"
+  ...
+}
+```
+
+and run
+
+```
+$ npm run docs
+```
+
 ## License
 
 MIT
