@@ -1,7 +1,7 @@
 {
   "name": "clean-documentation-theme",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "Theme for documentation.js",
   "main": "src/index.js",
   "scripts": {
     "test": "aegir-test --env node",
@@ -57,5 +57,8 @@
       "text-summary"
     ],
     "report-dir": "./coverage"
-  }
+  },
+  "contributors": [
+    "Friedel Ziegelmayer <dignifiedquire@gmail.com>"
+  ]
 }
