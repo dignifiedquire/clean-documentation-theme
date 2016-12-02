@@ -22,11 +22,22 @@ const SectionMember = ({
   parent,
   utils
 }) => {
+  let displayParent
+
+  if (parent) {
+    displayParent = parent + '.'
+  }
+
+  let displayName = displayParent + name
+  if (name === 'constructor') {
+    displayName = name
+  }
+
   return (
     <div>
       <h3 >
         <a className='anchor' name={namespace} />
-        {parent}.{name}
+        {displayName}
         <SourceLink context={member.context} />
       </h3>
       <Signature member={member} utils={utils} />

@@ -8,7 +8,7 @@ const remark = require('remark')
 const Utils = require('../src/utils')
 
 describe('utils', () => {
-  const u = new Utils({}, [])
+  const u = new Utils({hljs: {highlightAuto: false}}, [])
 
   describe('md', () => {
     it('renders remark asts', () => {

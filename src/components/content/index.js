@@ -13,7 +13,7 @@ const Content = ({options, docs}) => {
   const utils = new Utils(options, docs)
 
   return (
-    <div>
+    <div className='content'>
       <Style rules={contentStyles} />
       {docs.map((section) => (
         <Section

@@ -14,9 +14,10 @@ const Member = Radium(({name, namespace}) => {
   const linkStyle = {
     fontFamily: sansSerifFont,
     fontWeight: 300,
-    fontSize: '15px',
+    fontSize: '13px',
+    lineHeight: '16px',
     textDecoration: 'none',
-    color: textColor
+    color: '#555'
   }
 
   return (
@@ -40,7 +41,9 @@ const Members = Radium(({items, name, first}) => {
 
   const nameStyle = {
     textTransform: 'uppercase',
-    fontSize: '15px'
+    fontSize: '13px',
+    lineHeight: '18px',
+    color: '#666'
   }
 
   return (
@@ -136,7 +139,8 @@ const Nav = ({items}) => {
     marginTop: lineHeight(2),
     fontFamily: sansSerifFont,
     fontWeight: 500,
-    fontSize: '18px',
+    fontSize: '15px',
+    lineHeight: '18px',
     height: '70vh',
     overflowX: 'auto'
   }

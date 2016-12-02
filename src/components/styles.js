@@ -1,30 +1,36 @@
 'use strict'
 
-exports.lineHeight = (n = 1) => `${n * 23}px`
+exports.lineHeight = (n = 1) => `${n * 26}px`
 
 exports.monoFont = 'Roboto Mono, Menlo, Monaco, Courier, monospace'
-exports.serifFont = 'Roboto Slab, serif'
+// exports.serifFont = 'Roboto Slab, serif'
 exports.sansSerifFont = 'Roboto, sans-serif'
 
-exports.textColor = '#5b6888'
+exports.textColor = '#000' // '#5b6888'
 exports.lightGray = '#e6e9ed'
 
 exports.contentStyles = {
   'h1, h2, h3, h4, h5, h6': {
     fontFamily: exports.sansSerifFont,
-    fontWeight: 'bold'
+    fontWeight: 300
   },
   h1: {
-    fontSize: '32px',
-    lineHeight: '42px'
+    fontSize: '48px',
+    lineHeight: '72px'
   },
   h2: {
-    fontSize: '21px',
-    lineHeight: '27px'
+    fontSize: '24px',
+    lineHeight: '36px'
   },
   h3: {
+    fontSize: '19px',
+    lineHeight: '29px',
+    fontWeight: 400
+  },
+  h4: {
     fontSize: '17px',
-    lineHeight: '22px'
+    lineHeight: '22px',
+    fontWeight: 400
   },
   a: {
     textDecoration: 'none',
@@ -39,6 +45,21 @@ exports.contentStyles = {
     height: '100px',
     margin: '-80px 0 0'
   },
+  '.content blockquote': {
+    paddingLeft: '20px',
+    margin: 0,
+    borderLeft: '4px solid #eee'
+  },
+  '.content ul, content li': {
+    listStyle: 'none'
+  },
+  '.content ul li:before': {
+    color: '#CCC',
+    float: 'left',
+    marginLeft: '-20px',
+    marginTop: '1px',
+    content: '"•"'
+  },
   'pre.hljs, pre > code': {
     fontFamily: exports.monoFont,
     display: 'block',
@@ -49,18 +70,19 @@ exports.contentStyles = {
     position: 'relative',
     overflowX: 'auto',
     fontSize: '13px',
-    color: exports.textColor,
+    color: '#666',
     whiteSpace: 'pre'
   },
   code: {
     fontFamily: exports.monoFont,
     display: 'inline',
     fontSize: '13px',
-    fontWeight: '400',
+    fontWeight: 400,
     margin: '0 2px',
     padding: '1px 6px',
     boxShadow: '0 0 0 1px #DDD',
-    whiteSpace: 'nowrap'
+    whiteSpace: 'nowrap',
+    borderRadius: '4px'
   },
   // Highlightjs Theme
   '.hljs-meta': {
@@ -85,9 +107,15 @@ exports.contentStyles = {
     color: '#444'
   },
   '.hljs-built_in': {
-    fontWeight: 'bold'
+    fontWeight: 500
   },
   '.hljs-subst': {
-    color: exports.textColor
+    color: '#666'
+  },
+  '.hljs-name': {
+    color: '#EEBA00'
+  },
+  '.hljs-attr': {
+    fontWeight: 500
   }
 }

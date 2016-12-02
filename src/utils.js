@@ -17,7 +17,12 @@ module.exports = class Utils {
     this.options = options
     this.comments = comments
     this.formatters = createFormatters(this.linkerStack.link)
-    hljs.configure(options.hljs || {})
+    this.options.hljs = this.options.hljs || {}
+    if (this.options.hljs.highlightAuto == null) {
+      this.options.hljs.highlightAuto = true
+    }
+
+    hljs.configure(this.options.hljs)
 
     this.formatType = this.formatters.type
     this.autolink = this.formatters.autolink

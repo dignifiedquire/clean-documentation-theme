@@ -9,6 +9,7 @@ const SectionGroup = require('./section-group')
 const SourceLink = require('./source-link')
 const Extends = require('./extends')
 const See = require('./see')
+const Params = require('./params')
 
 const Section = ({
   name,
@@ -42,6 +43,7 @@ const Section = ({
           __html: utils.md(description)
         }} />
       <Extends list={section.augments} utils={utils} />
+      <Params params={section.params} utils={utils} />
       <See tags={section.tags} utils={utils} />
       {memberTypes.map((type, i) => (
         <SectionGroup

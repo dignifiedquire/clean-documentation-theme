@@ -11,6 +11,13 @@ const SectionGroup = ({name, utils, members, parent}) => {
     textTransform: 'uppercase'
   }
 
+  let displayParent
+  if (name === 'static') {
+    displayParent = parent
+  } else if (name === 'instance') {
+    displayParent = parent + '.prototype'
+  }
+
   return (
     <div>
       <h2 style={style}>{name}</h2>
@@ -20,7 +27,7 @@ const SectionGroup = ({name, utils, members, parent}) => {
           name={m.name}
           namespace={m.namespace}
           description={m.description}
-          parent={parent}
+          parent={displayParent}
           member={m}
           utils={utils} />
        ))}
