@@ -6,9 +6,10 @@ const Radium = require('radium')
 const Utils = require('../../utils')
 const Signature = require('./signature')
 const Description = require('./description')
-const Example = require('./example')
+const Examples = require('./examples')
 const Params = require('./params')
 const SourceLink = require('./source-link')
+const Returns = require('./returns')
 
 const SectionMember = ({
   namespace,
@@ -27,16 +28,9 @@ const SectionMember = ({
       </h3>
       <Signature member={member} utils={utils} />
       <Description content={description} utils={utils} />
-      {member.params ? (
-        <Params params={member.params} utils={utils} />
-      ) : null}
-      {member.examples && member.examples.map((example, i) => (
-        <Example
-          key={i}
-          name={example.caption}
-          content={example.description}
-          utils={utils} />
-       ))}
+      <Params params={member.params} utils={utils} />
+      <Returns list={member.returns} utils={utils} />
+      <Examples list={member.examples} utils={utils} />
     </div>
   )
 }

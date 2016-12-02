@@ -8,6 +8,10 @@ const {sansSerifFont} = require('../styles')
 const Param = require('./param')
 
 const Params = ({params, utils}) => {
+  if (!params || !params.length) {
+    return null
+  }
+
   const thStyle = {
     textAlign: 'left',
     fontFamily: sansSerifFont
@@ -41,7 +45,7 @@ const Params = ({params, utils}) => {
 }
 
 Params.propTypes = {
-  params: React.PropTypes.array.isRequired,
+  params: React.PropTypes.array,
   utils: React.PropTypes.instanceOf(Utils).isRequired
 }
 
