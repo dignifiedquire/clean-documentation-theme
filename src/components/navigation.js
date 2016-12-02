@@ -47,9 +47,9 @@ const Members = Radium(({items, name, first}) => {
     <div style={style}>
       <span style={nameStyle}>{name}</span>
       <ul style={listStyle}>
-        {items.map((member) => (
+        {items.map((member, i) => (
           <Member
-            key={member.name}
+            key={i}
             name={member.name}
             namespace={member.namespace} />
         ))}
@@ -64,21 +64,34 @@ const Item = Radium(({name, members, last}) => {
   const isFirst = () => membersElements.length === 0
 
   if (members) {
+    let keyCounter = 0
     if (members.static.length > 0) {
       membersElements.push(
-        <Members name='Static' items={members.static} first={isFirst()} />
+        <Members
+          key={keyCounter++}
+          name='Static'
+          items={members.static}
+          first={isFirst()} />
       )
     }
 
     if (members.instance.length > 0) {
       membersElements.push(
-        <Members name='Instance' items={members.instance} first={isFirst()} />
+        <Members
+          key={keyCounter++}
+          name='Instance'
+          items={members.instance}
+          first={isFirst()} />
       )
     }
 
     if (members.events.length > 0) {
       membersElements.push(
-        <Members name='Events' items={members.events} first={isFirst()} />
+        <Members
+          name='Events'
+          key={keyCounter++}
+          items={members.events}
+          first={isFirst()} />
       )
     }
   }
@@ -140,7 +153,7 @@ const Nav = ({items}) => {
       <ul style={listStyle}>
         {items.map((doc, i) => (
           <Item
-            key={doc.name}
+            key={i}
             name={doc.name}
             members={doc.members}
             last={i === (items.length - 1)} />

@@ -5,10 +5,10 @@ const Syntax = require('doctrine').Syntax
 const expect = require('chai').expect
 const remark = require('remark')
 
-const utils = require('../src/utils')
+const Utils = require('../src/utils')
 
 describe('utils', () => {
-  const u = utils({}, [])
+  const u = new Utils({}, [])
 
   describe('md', () => {
     it('renders remark asts', () => {

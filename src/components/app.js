@@ -54,8 +54,8 @@ const App = ({options, docs}) => {
 }
 
 App.propTypes = {
-  options: PropTypes.object,
-  docs: PropTypes.array
+  options: PropTypes.object.isRequired,
+  docs: PropTypes.array.isRequired
 }
 
 module.exports = Radium(App)
