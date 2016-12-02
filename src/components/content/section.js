@@ -6,6 +6,7 @@ const Radium = require('radium')
 const Utils = require('../../utils')
 const {lineHeight} = require('../styles')
 const SectionGroup = require('./section-group')
+const SourceLink = require('./source-link')
 
 const Section = ({
   name,
@@ -32,6 +33,7 @@ const Section = ({
       <h1>
         <a className='anchor' name={namespace} />
         {name}
+        <SourceLink context={section.context} />
       </h1>
       <div
         dangerouslySetInnerHTML={{

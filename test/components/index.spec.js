@@ -4,5 +4,6 @@
 require('babel-register')
 
 describe('Components', () => {
-  require('./app-test.js')
+  require('./app-test')
+  require('./source-link-test')
 })

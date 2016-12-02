@@ -8,6 +8,7 @@ const Signature = require('./signature')
 const Description = require('./description')
 const Example = require('./example')
 const Params = require('./params')
+const SourceLink = require('./source-link')
 
 const SectionMember = ({
   namespace,
@@ -22,6 +23,7 @@ const SectionMember = ({
       <h3 >
         <a className='anchor' name={namespace} />
         {parent}.{name}
+        <SourceLink context={member.context} />
       </h3>
       <Signature member={member} utils={utils} />
       <Description content={description} utils={utils} />
