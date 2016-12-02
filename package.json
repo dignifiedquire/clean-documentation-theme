@@ -58,6 +58,14 @@
     ],
     "report-dir": "./coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dignifiedquire/clean-documentation-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dignifiedquire/clean-documentation-theme/issues"
+  },
+  "homepage": "https://github.com/dignifiedquire/clean-documentation-theme",
   "contributors": [
     "Friedel Ziegelmayer <dignifiedquire@gmail.com>"
   ]
