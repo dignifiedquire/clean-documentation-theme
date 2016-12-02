@@ -12,6 +12,7 @@ const SourceLink = require('./source-link')
 const Returns = require('./returns')
 const Throws = require('./throws')
 const Extends = require('./extends')
+const See = require('./see')
 
 const SectionMember = ({
   namespace,
@@ -35,6 +36,7 @@ const SectionMember = ({
       <Returns list={member.returns} utils={utils} />
       <Throws list={member.throws} utils={utils} />
       <Examples list={member.examples} utils={utils} />
+      <See tags={member.tags} utils={utils} />
     </div>
   )
 }

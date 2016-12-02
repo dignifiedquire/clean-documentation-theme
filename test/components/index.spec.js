@@ -9,4 +9,5 @@ describe('Components', () => {
   require('./returns-test')
   require('./throws-test')
   require('./extends-test')
+  require('./see-test')
 })
