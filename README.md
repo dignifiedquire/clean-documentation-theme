@@ -10,7 +10,11 @@
 
 > A theme for [documentationjs](https://github.com/documentationjs)
 
-![](mockup.png)
+![](screenshot.png)
+
+## Preview
+
+- http://libp2p.github.io/js-peer-id/
 
 
 It uses [React](https://facebook.github.io/react/) server side rendering with [Radium](https://github.com/FormidableLabs/radium/) for styling components.
