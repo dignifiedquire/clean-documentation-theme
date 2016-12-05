@@ -1,6 +1,5 @@
 'use strict'
 
-require('babel-register')
 const path = require('path')
 const File = require('vinyl')
 const vfs = require('vinyl-fs')

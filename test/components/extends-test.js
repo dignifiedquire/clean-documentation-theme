@@ -5,8 +5,8 @@ const React = require('react')
 const expect = require('chai').expect
 const {render} = require('enzyme')
 
-const Extends = require('../../src/components/content/extends')
-const Utils = require('../../src/utils')
+const Extends = require('../../lib/components/content/extends')
+const Utils = require('../../lib/utils')
 
 describe('<Extends />', () => {
   const utils = new Utils({}, [])

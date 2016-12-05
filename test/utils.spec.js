@@ -5,7 +5,7 @@ const Syntax = require('doctrine').Syntax
 const expect = require('chai').expect
 const remark = require('remark')
 
-const Utils = require('../src/utils')
+const Utils = require('../lib/utils')
 
 describe('utils', () => {
   const u = new Utils({hljs: {highlightAuto: false}}, [])

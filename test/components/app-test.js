@@ -5,7 +5,7 @@ const React = require('react')
 const expect = require('chai').expect
 const {render} = require('enzyme')
 
-const App = require('../../src/components/app')
+const App = require('../../lib/components/app')
 
 describe('<App />', () => {
   it('renders', () => {

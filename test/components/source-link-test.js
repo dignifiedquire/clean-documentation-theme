@@ -5,7 +5,7 @@ const React = require('react')
 const expect = require('chai').expect
 const {render} = require('enzyme')
 
-const SourceLink = require('../../src/components/content/source-link')
+const SourceLink = require('../../lib/components/content/source-link')
 
 describe('<SourceLink />', () => {
   it('renders', () => {

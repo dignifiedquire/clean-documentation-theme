@@ -6,8 +6,8 @@ const expect = require('chai').expect
 const {render} = require('enzyme')
 const remark = require('remark')
 
-const Returns = require('../../src/components/content/returns')
-const Utils = require('../../src/utils')
+const Returns = require('../../lib/components/content/returns')
+const Utils = require('../../lib/utils')
 
 describe('<Returns />', () => {
   const utils = new Utils({}, [])

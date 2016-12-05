@@ -6,8 +6,8 @@ const expect = require('chai').expect
 const {render} = require('enzyme')
 const remark = require('remark')
 
-const Throws = require('../../src/components/content/throws')
-const Utils = require('../../src/utils')
+const Throws = require('../../lib/components/content/throws')
+const Utils = require('../../lib/utils')
 
 describe('<Throws />', () => {
   const utils = new Utils({}, [])
