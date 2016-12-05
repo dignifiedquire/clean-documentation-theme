@@ -30,6 +30,7 @@
     "documentation": "^4.0.0-beta14",
     "github-slugger": "^1.1.1",
     "highlight.js": "^9.8.0",
+    "lodash": "^4.17.2",
     "radium": "^0.18.1",
     "radium-bootstrap-grid": "^0.1.3",
     "react": "^15.4.1",

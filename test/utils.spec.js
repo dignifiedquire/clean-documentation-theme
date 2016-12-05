@@ -33,6 +33,11 @@ describe('utils', () => {
       type: 'NameExpression',
       name: 'Foo'
     })).to.be.eql('Foo')
+
+    expect(formatType({
+      type: 'NameExpression',
+      name: 'Buffer'
+    })).to.be.eql('<a href="https://nodejs.org/api/buffer.html">Buffer</a>')
   })
 
   it('.highlight', () => {

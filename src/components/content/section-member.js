@@ -14,6 +14,8 @@ const Throws = require('./throws')
 const Extends = require('./extends')
 const See = require('./see')
 
+const {lineHeight} = require('../styles')
+
 const SectionMember = ({
   namespace,
   name,
@@ -33,8 +35,12 @@ const SectionMember = ({
     displayName = name
   }
 
+  const style = {
+    marginBottom: lineHeight(2)
+  }
+
   return (
-    <div>
+    <div style={style}>
       <h3 >
         <a className='anchor' name={namespace} />
         {displayName}

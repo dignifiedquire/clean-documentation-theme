@@ -5,6 +5,7 @@ const hljs = require('highlight.js')
 const util = require('documentation').util
 const createFormatters = util.createFormatters
 const createLinkerStack = util.createLinkerStack
+const _ = require('lodash')
 
 module.exports = class Utils {
   constructor (options, comments) {
@@ -73,7 +74,8 @@ function getType (section) {
     return
   }
 
-  const tag = section.tags.find((tag) => tag.title === 'type')
+  const tag = _.find(section.tags, (tag) => tag.title === 'type')
+
   if (!tag) {
     return
   }
