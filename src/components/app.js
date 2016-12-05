@@ -38,7 +38,10 @@ const App = ({options, docs}) => {
 
   return (
     <StyleRoot>
-      <Header name={options.name} version={options.version} />
+      <Header
+        name={options.name}
+        version={options.version}
+        project={options.project} />
 
       <Container style={containerStyle}>
         <Row>

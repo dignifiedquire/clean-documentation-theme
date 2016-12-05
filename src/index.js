@@ -22,7 +22,25 @@ function pageTemplate (props) {
   return `<!doctype html>\n${html}`
 }
 
+function getProject (comments) {
+  if (!comments || !comments.length) {
+    return
+  }
+
+  if (!comments[0].context) {
+    return
+  }
+
+  const url = comments[0].context.github
+
+  // url is of the form
+  // https://github.com/libp2p/js-peer-id/blob/c1ed9751e34fabd3c7687cb6f8850aa68f63581f/src/index.js#L24-L141
+  return url.split('/').slice(0, 5).join('/')
+}
+
 module.exports = function (comments, options, callback) {
+  options.project = getProject(comments)
+
   // push assets into the pipeline as well.
   vfs.src(
     [path.join(__dirname, '/assets/**')], { base: __dirname }
