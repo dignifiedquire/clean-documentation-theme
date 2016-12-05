@@ -2,6 +2,7 @@
 
 const React = require('react')
 const Radium = require('radium')
+const {Container, Column, Row} = require('radium-bootstrap-grid')
 
 const Utils = require('../../utils')
 const {sansSerifFont} = require('../styles')
@@ -14,20 +15,29 @@ const Params = ({params, utils}) => {
 
   const thStyle = {
     textAlign: 'left',
+    fontWeight: 'bold',
     fontFamily: sansSerifFont
   }
 
   return (
     <div>
       <h4>Parameters</h4>
-      <table>
-        <thead>
-          <tr>
-            <th style={thStyle}>Name</th>
-            <th style={thStyle}>Description</th>
-          </tr>
-        </thead>
-        <tbody>
+      <Container style={{maxWidth: '100%'}}>
+        <Row>
+          <Column
+            md={4} ms={4}
+            xsHidden
+            style={thStyle}>
+            Name
+          </Column>
+          <Column
+            md={8} ms={8}
+            xsHidden
+            style={thStyle}>
+            Description
+          </Column>
+        </Row>
+        <Row>
           {params.map((param) => (
             <Param
               key={param.name}
@@ -38,8 +48,8 @@ const Params = ({params, utils}) => {
               properties={param.properties}
               utils={utils} />
            ))}
-        </tbody>
-      </table>
+        </Row>
+      </Container>
     </div>
   )
 }

@@ -5,7 +5,7 @@ const Radium = require('radium')
 const {Container, Row, Column} = require('radium-bootstrap-grid')
 const Octocat = require('react-icons/lib/go/mark-github')
 
-const {monoFont, sansSerifFont} = require('./styles')
+const {monoFont, sansSerifFont, lineHeight} = require('./styles')
 
 const Title = Radium(({value}) => {
   const style = {
@@ -36,11 +36,11 @@ const Version = Radium(({value}) => {
 const Header = ({name, version, project}) => {
   const style = {
     boxShadow: '0px 2px 3px 0px rgba(0, 0, 0, 0.25)',
-    height: '49px',
+    height: lineHeight(2.5),
     width: '100%',
     minWidth: '100%',
-    marginLeft: '-20px',
-    marginRight: '-20px',
+    marginLeft: '0',
+    marginRight: '0',
     position: 'fixed',
     zIndex: 99,
     background: '#FFFFFF',
@@ -60,7 +60,7 @@ const Header = ({name, version, project}) => {
 
   if (project) {
     projectLink = (
-      <Column style={projectLinkStyle}>
+      <Column md={3} xs={3} style={projectLinkStyle}>
         <a href={project}>
           <Octocat />
         </a>
@@ -73,7 +73,7 @@ const Header = ({name, version, project}) => {
       <Container>
         <Row>
           <Column
-            md={5}
+            md={6}
             xs={6}>
             <Title value={name} />
             <Version value={version} />

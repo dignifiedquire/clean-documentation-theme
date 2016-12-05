@@ -2,6 +2,7 @@
 
 const React = require('react')
 const Radium = require('radium')
+const {Column, Row} = require('radium-bootstrap-grid')
 
 const Utils = require('../../utils')
 const Type = require('./type')
@@ -22,34 +23,40 @@ const Param = ({
 
   if (properties && properties.length > 0) {
     propertyList = properties.map((p) => (
-      <tr key={p.name}>
-        <td>
+      <Row key={p.name}>
+        <Column md={4} ms={4} xs={12}>
           <Type
             name={p.name}
             val={p.type}
             defaultVal={p.default}
             utils={utils} />
-        </td>
-        <td dangerouslySetInnerHTML={{
-          __html: utils.md(p.description, true)
-        }} />
-      </tr>
+        </Column>
+        <Column
+          md={8}
+          ms={8}
+          xs={12}
+          dangerouslySetInnerHTML={{
+            __html: utils.md(p.description, true)
+          }} />
+      </Row>
     ))
   }
 
   return (
     <div>
-      <tr key='1'>
-        <td>
+      <Row key='1'>
+        <Column md={4} ms={4} xs={12}>
           <Type
             name={name}
             val={typeVal}
             defaultVal={defaultVal}
             utils={utils} />
-        </td>
-        <td
+        </Column>
+        <Column
+          md={8} ms={8}
+          xs={12}
           dangerouslySetInnerHTML={rendered} />
-      </tr>
+      </Row>
       {propertyList}
     </div>
   )
