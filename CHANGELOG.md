@@ -1,3 +1,19 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/dignifiedquire/clean-documentation-theme/compare/v0.3.0...v0.4.0) (2016-12-06)
+
+
+### Bug Fixes
+
+* ensure types are properly formatted ([ee38afe](https://github.com/dignifiedquire/clean-documentation-theme/commit/ee38afe))
+* **utils:** default to auto highlighting ([733b24d](https://github.com/dignifiedquire/clean-documentation-theme/commit/733b24d)), closes [#10](https://github.com/dignifiedquire/clean-documentation-theme/issues/10)
+
+
+### Features
+
+* **design:** better parameter lists ([3e03c5d](https://github.com/dignifiedquire/clean-documentation-theme/commit/3e03c5d))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/dignifiedquire/clean-documentation-theme/compare/v0.2.0...v0.3.0) (2016-12-05)
 
