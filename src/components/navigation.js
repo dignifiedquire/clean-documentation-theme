@@ -141,7 +141,7 @@ const Nav = ({items}) => {
     fontWeight: 500,
     fontSize: '15px',
     lineHeight: '18px',
-    height: '70vh',
+    maxHeight: '70vh',
     overflowX: 'auto'
   }
 

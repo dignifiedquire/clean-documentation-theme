@@ -6,6 +6,7 @@ const vfs = require('vinyl-fs')
 const concat = require('concat-stream')
 const render = require('react-dom/server').renderToStaticMarkup
 const React = require('react')
+const _ = require('lodash')
 
 const Html = React.createFactory(require('./components/html.js'))
 const App = React.createFactory(require('./components/app.js'))
@@ -27,11 +28,13 @@ function getProject (comments) {
     return
   }
 
-  if (!comments[0].context) {
+  const comment = _.find(comments, (c) => c.context && c.context.github)
+
+  if (comment === -1) {
     return
   }
 
-  const url = comments[0].context.github
+  const url = comment.context.github
 
   // url is of the form
   // https://github.com/libp2p/js-peer-id/blob/c1ed9751e34fabd3c7687cb6f8850aa68f63581f/src/index.js#L24-L141

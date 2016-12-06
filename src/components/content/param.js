@@ -2,10 +2,41 @@
 
 const React = require('react')
 const Radium = require('radium')
-const {Column, Row} = require('radium-bootstrap-grid')
 
 const Utils = require('../../utils')
 const Type = require('./type')
+const {lineHeight} = require('../styles')
+
+const ListItem = Radium(({
+  name,
+  val,
+  defaultVal,
+  description,
+  utils
+}) => {
+  const descriptionStyle = {
+    display: 'inline-block'
+  }
+  const liStyle = {
+    paddingBottom: lineHeight(0.5)
+  }
+
+  return (
+    <li style={liStyle}>
+      <Type
+        name={name}
+        val={val}
+        defaultVal={defaultVal}
+        utils={utils} />
+    : &nbsp;
+    <div
+      style={descriptionStyle}
+      dangerouslySetInnerHTML={{
+        __html: utils.md(description, true)
+      }} />
+    </li>
+  )
+})
 
 const Param = ({
   name,
@@ -15,48 +46,29 @@ const Param = ({
   properties,
   utils
 }) => {
-  const rendered = {
-    __html: utils.md(description, true)
-  }
-
   let propertyList
 
   if (properties && properties.length > 0) {
     propertyList = properties.map((p) => (
-      <Row key={p.name}>
-        <Column md={4} ms={4} xs={12}>
-          <Type
-            name={p.name}
-            val={p.type}
-            defaultVal={p.default}
-            utils={utils} />
-        </Column>
-        <Column
-          md={8}
-          ms={8}
-          xs={12}
-          dangerouslySetInnerHTML={{
-            __html: utils.md(p.description, true)
-          }} />
-      </Row>
+      <ListItem
+        key={p.name}
+        name={p.name}
+        val={p.type}
+        defaultVal={p.default}
+        description={p.description}
+        utils={utils} />
     ))
   }
 
   return (
     <div>
-      <Row key='1'>
-        <Column md={4} ms={4} xs={12}>
-          <Type
-            name={name}
-            val={typeVal}
-            defaultVal={defaultVal}
-            utils={utils} />
-        </Column>
-        <Column
-          md={8} ms={8}
-          xs={12}
-          dangerouslySetInnerHTML={rendered} />
-      </Row>
+      <ListItem
+        key='1'
+        name={name}
+        val={typeVal}
+        defaultVal={defaultVal}
+        description={description}
+        utils={utils} />
       {propertyList}
     </div>
   )

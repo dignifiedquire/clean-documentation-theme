@@ -7,6 +7,7 @@
     "test": "npm run build && aegir-test --env node",
     "lint": "aegir-lint",
     "build": "babel src -d lib",
+    "dev": "babel src -d lib --watch",
     "release": "npm run build && aegir-release --env node",
     "release-minor": "npm run build && aegir-release --env node --type minor",
     "release-major": "npm run build && aegir-release --env node --type major",

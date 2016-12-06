@@ -2,10 +2,8 @@
 
 const React = require('react')
 const Radium = require('radium')
-const {Container, Column, Row} = require('radium-bootstrap-grid')
 
 const Utils = require('../../utils')
-const {sansSerifFont} = require('../styles')
 const Param = require('./param')
 
 const Params = ({params, utils}) => {
@@ -13,43 +11,27 @@ const Params = ({params, utils}) => {
     return null
   }
 
-  const thStyle = {
-    textAlign: 'left',
-    fontWeight: 'bold',
-    fontFamily: sansSerifFont
+  const listStyle = {
+    listStyle: 'none',
+    marginLeft: 0,
+    paddingLeft: 0
   }
 
   return (
     <div>
       <h4>Parameters</h4>
-      <Container style={{maxWidth: '100%'}}>
-        <Row>
-          <Column
-            md={4} ms={4}
-            xsHidden
-            style={thStyle}>
-            Name
-          </Column>
-          <Column
-            md={8} ms={8}
-            xsHidden
-            style={thStyle}>
-            Description
-          </Column>
-        </Row>
-        <Row>
-          {params.map((param) => (
-            <Param
-              key={param.name}
-              name={param.name}
-              typeVal={param.type}
-              defaultVal={param.default}
-              description={param.description}
-              properties={param.properties}
-              utils={utils} />
-           ))}
-        </Row>
-      </Container>
+      <ol style={listStyle}>
+        {params.map((param) => (
+          <Param
+            key={param.name}
+            name={param.name}
+            typeVal={param.type}
+            defaultVal={param.default}
+            description={param.description}
+            properties={param.properties}
+            utils={utils} />
+         ))}
+      </ol>
     </div>
   )
 }
