@@ -136,7 +136,7 @@ const Nav = ({items}) => {
     border: `1px solid ${lightGray}`,
     paddingTop: 0,
     paddingBottom: 0,
-    marginTop: lineHeight(2),
+    marginTop: lineHeight(),
     fontFamily: sansSerifFont,
     fontWeight: 500,
     fontSize: '15px',
