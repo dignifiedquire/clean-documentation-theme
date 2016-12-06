@@ -19,9 +19,6 @@ module.exports = class Utils {
     this.comments = comments
     this.formatters = createFormatters(this.linkerStack.link)
     this.options.hljs = this.options.hljs || {}
-    if (this.options.hljs.highlightAuto == null) {
-      this.options.hljs.highlightAuto = true
-    }
 
     hljs.configure(this.options.hljs)
 
