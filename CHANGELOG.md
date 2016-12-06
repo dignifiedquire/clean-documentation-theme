@@ -1,3 +1,14 @@
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/dignifiedquire/clean-documentation-theme/compare/v0.4.0...v0.4.1) (2016-12-06)
+
+
+### Features
+
+* **header:** add simple default logo ([3479471](https://github.com/dignifiedquire/clean-documentation-theme/commit/3479471))
+* **nav:** reduce top margin ([76538bb](https://github.com/dignifiedquire/clean-documentation-theme/commit/76538bb))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/dignifiedquire/clean-documentation-theme/compare/v0.3.0...v0.4.0) (2016-12-06)
 
