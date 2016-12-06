@@ -4,6 +4,7 @@ const React = require('react')
 const Radium = require('radium')
 const {Container, Row, Column} = require('radium-bootstrap-grid')
 const Octocat = require('react-icons/lib/go/mark-github')
+const BookIcon = require('react-icons/lib/go/book')
 
 const {monoFont, sansSerifFont, lineHeight} = require('./styles')
 
@@ -67,16 +68,26 @@ const Header = ({name, version, project}) => {
       </Column>
     )
   }
+  const logoStyle = {
+    fontSize: '36px',
+    verticalAlign: 'inherit',
+    marginRight: '20px'
+  }
+
+  const titleStyle = {
+    display: 'inline-block'
+  }
 
   return (
     <div style={style}>
       <Container>
         <Row>
-          <Column
-            md={6}
-            xs={6}>
-            <Title value={name} />
-            <Version value={version} />
+          <Column md={6} xs={6}>
+            <BookIcon style={logoStyle} />
+            <div style={titleStyle}>
+              <Title value={name} />
+              <Version value={version} />
+            </div>
           </Column>
           {projectLink}
         </Row>
