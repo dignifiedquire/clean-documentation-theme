@@ -37,7 +37,7 @@ const Section = ({
   return (
     <div style={style}>
       <h1>
-        <a className='anchor' name={namespace} />
+        <a className='anchor' name={utils.slug(namespace)} />
         {name}
         <SourceLink context={section.context} />
       </h1>

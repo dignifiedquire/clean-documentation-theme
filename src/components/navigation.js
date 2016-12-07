@@ -2,6 +2,7 @@
 
 const React = require('react')
 const Radium = require('radium')
+const Utils = require('../utils')
 
 const {
   lineHeight,
@@ -10,7 +11,7 @@ const {
   lightGray
 } = require('./styles')
 
-const Member = Radium(({name, namespace}) => {
+const Member = Radium(({name, namespace, utils}) => {
   const linkStyle = {
     fontFamily: sansSerifFont,
     fontWeight: 300,
@@ -22,14 +23,20 @@ const Member = Radium(({name, namespace}) => {
 
   return (
     <li>
-      <a href={`#${namespace}`} style={linkStyle}>
+      <a href={`#${utils.slug(namespace || name)}`} style={linkStyle}>
         {name}
       </a>
     </li>
   )
 })
 
-const Members = Radium(({items, name, first}) => {
+Member.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  namespace: React.PropTypes.string,
+  utils: React.PropTypes.instanceOf(Utils).isRequired
+}
+
+const Members = Radium(({items, name, first, utils}) => {
   const style = {
     paddingTop: first ? 0 : lineHeight(0.5)
   }
@@ -54,47 +61,58 @@ const Members = Radium(({items, name, first}) => {
           <Member
             key={i}
             name={member.name}
-            namespace={member.namespace} />
+            namespace={member.namespace}
+            utils={utils} />
         ))}
       </ul>
     </div>
   )
 })
 
-const Item = Radium(({name, members, last}) => {
+Members.propTypes = {
+  name: React.PropTypes.string,
+  items: React.PropTypes.array,
+  first: React.PropTypes.bool.isRequired,
+  utils: React.PropTypes.instanceOf(Utils).isRequired
+}
+
+const Item = Radium(({name, members, last, namespace, utils}) => {
   let membersElements = []
 
   const isFirst = () => membersElements.length === 0
 
   if (members) {
     let keyCounter = 0
-    if (members.static.length > 0) {
+    if (members.static && members.static.length > 0) {
       membersElements.push(
         <Members
           key={keyCounter++}
           name='Static'
           items={members.static}
-          first={isFirst()} />
+          first={isFirst()}
+          utils={utils} />
       )
     }
 
-    if (members.instance.length > 0) {
+    if (members.instance && members.instance.length > 0) {
       membersElements.push(
         <Members
           key={keyCounter++}
           name='Instance'
           items={members.instance}
-          first={isFirst()} />
+          first={isFirst()}
+          utils={utils} />
       )
     }
 
-    if (members.events.length > 0) {
+    if (members.events && members.events.length > 0) {
       membersElements.push(
         <Members
           name='Events'
           key={keyCounter++}
           items={members.events}
-          first={isFirst()} />
+          first={isFirst()}
+          utils={utils} />
       )
     }
   }
@@ -117,7 +135,7 @@ const Item = Radium(({name, members, last}) => {
   return (
     <div>
       <li style={[style, itemStyle]}>
-        <a style={{color: textColor}} href={`#${name}`}>
+        <a style={{color: textColor}} href={`#${utils.slug(namespace || name)}`}>
           {name}
         </a>
       </li>
@@ -130,7 +148,15 @@ const Item = Radium(({name, members, last}) => {
   )
 })
 
-const Nav = ({items}) => {
+Item.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  members: React.PropTypes.object,
+  last: React.PropTypes.bool.isRequired,
+  namespace: React.PropTypes.string,
+  utils: React.PropTypes.instanceOf(Utils).isRequired
+}
+
+const Nav = ({items, utils}) => {
   const style = {
     borderRadius: '4px',
     border: `1px solid ${lightGray}`,
@@ -160,11 +186,18 @@ const Nav = ({items}) => {
             key={i}
             name={doc.name}
             members={doc.members}
-            last={i === (items.length - 1)} />
+            namespace={doc.namespace}
+            last={i === (items.length - 1)}
+            utils={utils} />
          ))}
       </ul>
     </div>
   )
+}
+
+Nav.propTypes = {
+  items: React.PropTypes.array,
+  utils: React.PropTypes.instanceOf(Utils).isRequired
 }
 
 module.exports = Radium(Nav)

@@ -21,9 +21,9 @@ const SectionGroup = ({name, utils, members, parent}) => {
   return (
     <div>
       <h2 style={style}>{name}</h2>
-      {members.map((m) => (
+      {members.map((m, i) => (
         <SectionMember
-          key={m.name}
+          key={i}
           name={m.name}
           namespace={m.namespace}
           description={m.description}

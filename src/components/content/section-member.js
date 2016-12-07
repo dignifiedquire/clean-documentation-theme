@@ -42,7 +42,7 @@ const SectionMember = ({
   return (
     <div style={style}>
       <h3 >
-        <a className='anchor' name={namespace} />
+        <a className='anchor' name={utils.slug(namespace)} />
         {displayName}
         <SourceLink context={member.context} />
       </h3>

@@ -10,6 +10,7 @@ const Header = require('./header')
 const Nav = require('./navigation')
 const Content = require('./content')
 const {lineHeight} = require('./styles')
+const Utils = require('../utils')
 
 const hasMembers = (doc) => {
   const m = doc.members
@@ -36,6 +37,8 @@ const App = ({options, docs}) => {
     maxWidth: '300px'
   }
 
+  const utils = new Utils(options, docs)
+
   return (
     <StyleRoot>
       <Header
@@ -49,7 +52,9 @@ const App = ({options, docs}) => {
             lg={3} md={3} sm={3}
             xsHidden msHidden
             style={navStyle}>
-            <Nav items={navItems} />
+            <Nav
+              items={navItems}
+              utils={utils} />
           </Column>
           <Column
             lg={8} lgPush={4}
@@ -57,7 +62,9 @@ const App = ({options, docs}) => {
             sm={8} smPush={4}
             ms={12} msPush={0}
             xsPush={0} xs={12} >
-            <Content options={options} docs={docs} />
+            <Content
+              docs={docs}
+              utils={utils} />
           </Column>
         </Row>
       </Container>

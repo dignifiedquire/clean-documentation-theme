@@ -64,6 +64,11 @@ module.exports = class Utils {
 
     return prefix + section.name + this.formatters.parameters(section) + returns
   }
+
+  slug (str) {
+    const slugger = new GithubSlugger()
+    return slugger.slug(str)
+  }
 }
 
 function getType (section) {

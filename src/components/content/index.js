@@ -9,15 +9,13 @@ const {contentStyles} = require('../styles')
 
 const Section = require('./section')
 
-const Content = ({options, docs}) => {
-  const utils = new Utils(options, docs)
-
+const Content = ({utils, docs}) => {
   return (
     <div className='content'>
       <Style rules={contentStyles} />
-      {docs.map((section) => (
+      {docs.map((section, i) => (
         <Section
-          key={section.name}
+          key={i}
           name={section.name}
           namespace={section.namespace}
           section={section}
@@ -29,7 +27,7 @@ const Content = ({options, docs}) => {
 }
 
 Content.propTypes = {
-  options: React.PropTypes.object.isRequired,
+  utils: React.PropTypes.instanceOf(Utils).isRequired,
   docs: React.PropTypes.array.isRequired
 }
 
