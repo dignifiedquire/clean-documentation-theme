@@ -1,3 +1,14 @@
+<a name="0.4.2"></a>
+## [0.4.2](https://github.com/dignifiedquire/clean-documentation-theme/compare/v0.4.1...v0.4.2) (2016-12-08)
+
+
+### Bug Fixes
+
+* **section:** add examples, throws and returns to top sections ([e2746df](https://github.com/dignifiedquire/clean-documentation-theme/commit/e2746df))
+* various navigation and index fixes ([d6f4ceb](https://github.com/dignifiedquire/clean-documentation-theme/commit/d6f4ceb))
+
+
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/dignifiedquire/clean-documentation-theme/compare/v0.4.0...v0.4.1) (2016-12-06)
 
