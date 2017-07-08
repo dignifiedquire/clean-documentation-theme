@@ -4,12 +4,12 @@ const GithubSlugger = require('github-slugger')
 const hljs = require('highlight.js')
 const util = require('documentation').util
 const createFormatters = util.createFormatters
-const createLinkerStack = util.createLinkerStack
+const LinkerStack = util.LinkerStack
 const _ = require('lodash')
 
 module.exports = class Utils {
   constructor (options, comments) {
-    this.linkerStack = createLinkerStack(options)
+    this.linkerStack = new LinkerStack(options)
       .namespaceResolver(comments, (namespace) => {
         const slugger = new GithubSlugger()
         return '#' + slugger.slug(namespace)

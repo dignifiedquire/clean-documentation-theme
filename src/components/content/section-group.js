@@ -2,6 +2,7 @@
 
 const React = require('react')
 const Radium = require('radium')
+const PropTypes = require('prop-types')
 
 const Utils = require('../../utils')
 const SectionMember = require('./section-member')
@@ -36,10 +37,10 @@ const SectionGroup = ({name, utils, members, parent}) => {
 }
 
 SectionGroup.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  members: React.PropTypes.array.isRequired,
-  parent: React.PropTypes.string.isRequired,
-  utils: React.PropTypes.instanceOf(Utils).isRequired
+  name: PropTypes.string.isRequired,
+  members: PropTypes.array.isRequired,
+  parent: PropTypes.string.isRequired,
+  utils: PropTypes.instanceOf(Utils).isRequired
 }
 
 module.exports = Radium(SectionGroup)

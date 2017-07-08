@@ -2,6 +2,7 @@
 
 const React = require('react')
 const Radium = require('radium')
+const PropTypes = require('prop-types')
 
 const GoCode = require('react-icons/lib/go/code')
 
@@ -25,7 +26,7 @@ const SourceLink = ({context}) => {
 }
 
 SourceLink.propTypes = {
-  context: React.PropTypes.object
+  context: PropTypes.object
 }
 
 module.exports = Radium(SourceLink)

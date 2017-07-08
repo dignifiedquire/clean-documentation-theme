@@ -3,6 +3,7 @@
 const React = require('react')
 const Radium = require('radium')
 const remark = require('remark')()
+const PropTypes = require('prop-types')
 
 const Utils = require('../../utils')
 
@@ -39,8 +40,8 @@ const See = ({tags, utils}) => {
 }
 
 See.propTypes = {
-  tags: React.PropTypes.array,
-  utils: React.PropTypes.instanceOf(Utils).isRequired
+  tags: PropTypes.array,
+  utils: PropTypes.instanceOf(Utils).isRequired
 }
 
 module.exports = Radium(See)

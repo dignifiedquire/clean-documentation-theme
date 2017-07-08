@@ -2,6 +2,7 @@
 
 const React = require('react')
 const Radium = require('radium')
+const PropTypes = require('prop-types')
 
 const {lineHeight} = require('../styles')
 const Utils = require('../../utils')
@@ -24,11 +25,11 @@ const Description = ({content, utils}) => {
 }
 
 Description.propTypes = {
-  content: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.object
+  content: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
   ]).isRequired,
-  utils: React.PropTypes.instanceOf(Utils).isRequired
+  utils: PropTypes.instanceOf(Utils).isRequired
 }
 
 module.exports = Radium(Description)

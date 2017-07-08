@@ -34,27 +34,27 @@ function getProject (comments) {
     return
   }
 
-  const url = comment.context.github
+  const url = comment.context.github.url
 
   // url is of the form
   // https://github.com/libp2p/js-peer-id/blob/c1ed9751e34fabd3c7687cb6f8850aa68f63581f/src/index.js#L24-L141
   return url.split('/').slice(0, 5).join('/')
 }
 
-module.exports = function (comments, options, callback) {
-  options.project = getProject(comments)
+module.exports = function (comments, options) {
+  return new Promise((resolve) => {
+    options.project = getProject(comments)
 
-  // push assets into the pipeline as well.
-  vfs.src(
-    [path.join(__dirname, '/assets/**')], { base: __dirname }
-  )
-    .pipe(concat(function (files) {
-      callback(null, files.concat(new File({
-        path: 'index.html',
-        contents: new Buffer(pageTemplate({
-          docs: comments,
-          options: options
-        }), 'utf8')
-      })))
-    }))
+    // push assets into the pipeline as well.
+    vfs.src([path.join(__dirname, '/assets/**')], { base: __dirname }).pipe(
+      concat((files) => {
+        resolve(files.concat(new File({
+          path: 'index.html',
+          contents: new Buffer(pageTemplate({
+            docs: comments,
+            options: options
+          }), 'utf8')
+        })))
+      }))
+  })
 }

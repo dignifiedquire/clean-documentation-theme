@@ -2,6 +2,8 @@
 
 const React = require('react')
 const Radium = require('radium')
+const PropTypes = require('prop-types')
+
 const Utils = require('../utils')
 
 const {
@@ -31,9 +33,9 @@ const Member = Radium(({name, namespace, utils}) => {
 })
 
 Member.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  namespace: React.PropTypes.string,
-  utils: React.PropTypes.instanceOf(Utils).isRequired
+  name: PropTypes.string.isRequired,
+  namespace: PropTypes.string,
+  utils: PropTypes.instanceOf(Utils).isRequired
 }
 
 const Members = Radium(({items, name, first, utils}) => {
@@ -70,10 +72,10 @@ const Members = Radium(({items, name, first, utils}) => {
 })
 
 Members.propTypes = {
-  name: React.PropTypes.string,
-  items: React.PropTypes.array,
-  first: React.PropTypes.bool.isRequired,
-  utils: React.PropTypes.instanceOf(Utils).isRequired
+  name: PropTypes.string,
+  items: PropTypes.array,
+  first: PropTypes.bool.isRequired,
+  utils: PropTypes.instanceOf(Utils).isRequired
 }
 
 const Item = Radium(({name, members, last, namespace, utils}) => {
@@ -149,11 +151,11 @@ const Item = Radium(({name, members, last, namespace, utils}) => {
 })
 
 Item.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  members: React.PropTypes.object,
-  last: React.PropTypes.bool.isRequired,
-  namespace: React.PropTypes.string,
-  utils: React.PropTypes.instanceOf(Utils).isRequired
+  name: PropTypes.string.isRequired,
+  members: PropTypes.object,
+  last: PropTypes.bool.isRequired,
+  namespace: PropTypes.string,
+  utils: PropTypes.instanceOf(Utils).isRequired
 }
 
 const Nav = ({items, utils}) => {
@@ -196,8 +198,8 @@ const Nav = ({items, utils}) => {
 }
 
 Nav.propTypes = {
-  items: React.PropTypes.array,
-  utils: React.PropTypes.instanceOf(Utils).isRequired
+  items: PropTypes.array,
+  utils: PropTypes.instanceOf(Utils).isRequired
 }
 
 module.exports = Radium(Nav)

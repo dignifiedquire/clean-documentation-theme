@@ -2,6 +2,7 @@
 
 const React = require('react')
 const Radium = require('radium')
+const PropTypes = require('prop-types')
 
 const Utils = require('../../utils')
 const Type = require('./type')
@@ -75,12 +76,12 @@ const Param = ({
 }
 
 Param.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  typeVal: React.PropTypes.any,
-  defaultVal: React.PropTypes.string,
-  description: React.PropTypes.object,
-  properties: React.PropTypes.array,
-  utils: React.PropTypes.instanceOf(Utils).isRequired
+  name: PropTypes.string.isRequired,
+  typeVal: PropTypes.any,
+  defaultVal: PropTypes.string,
+  description: PropTypes.object,
+  properties: PropTypes.array,
+  utils: PropTypes.instanceOf(Utils).isRequired
 }
 
 module.exports = Radium(Param)

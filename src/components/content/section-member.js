@@ -2,6 +2,7 @@
 
 const React = require('react')
 const Radium = require('radium')
+const PropTypes = require('prop-types')
 
 const Utils = require('../../utils')
 const Signature = require('./signature')
@@ -59,15 +60,15 @@ const SectionMember = ({
 }
 
 SectionMember.propTypes = {
-  namespace: React.PropTypes.string,
-  name: React.PropTypes.string.isRequired,
-  description: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.object
+  namespace: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
   ]),
-  member: React.PropTypes.object,
-  parent: React.PropTypes.string.isRequired,
-  utils: React.PropTypes.instanceOf(Utils).isRequired
+  member: PropTypes.object,
+  parent: PropTypes.string.isRequired,
+  utils: PropTypes.instanceOf(Utils).isRequired
 }
 
 module.exports = Radium(SectionMember)

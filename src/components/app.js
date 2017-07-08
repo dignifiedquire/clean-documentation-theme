@@ -1,7 +1,7 @@
 'use strict'
 
 const React = require('react')
-const {PropTypes} = React
+const PropTypes = require('prop-types')
 const Radium = require('radium')
 const {StyleRoot} = Radium
 const {Container, Column, Row} = require('radium-bootstrap-grid')
@@ -38,9 +38,11 @@ const App = ({options, docs}) => {
   }
 
   const utils = new Utils(options, docs)
-
+  const radiumConfig = {
+    userAgent: 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'
+  }
   return (
-    <StyleRoot>
+    <StyleRoot radiumConfig={radiumConfig}>
       <Header
         name={options.name}
         version={options.version}

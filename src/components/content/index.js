@@ -3,6 +3,7 @@
 const React = require('react')
 const Radium = require('radium')
 const {Style} = Radium
+const PropTypes = require('prop-types')
 
 const Utils = require('../../utils')
 const {contentStyles} = require('../styles')
@@ -27,8 +28,8 @@ const Content = ({utils, docs}) => {
 }
 
 Content.propTypes = {
-  utils: React.PropTypes.instanceOf(Utils).isRequired,
-  docs: React.PropTypes.array.isRequired
+  utils: PropTypes.instanceOf(Utils).isRequired,
+  docs: PropTypes.array.isRequired
 }
 
 module.exports = Radium(Content)

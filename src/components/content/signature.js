@@ -2,6 +2,7 @@
 
 const React = require('react')
 const Radium = require('radium')
+const PropTypes = require('prop-types')
 
 const Utils = require('../../utils')
 
@@ -19,8 +20,8 @@ const Signature = ({member, utils}) => {
 }
 
 Signature.propTypes = {
-  member: React.PropTypes.object,
-  utils: React.PropTypes.instanceOf(Utils).isRequired
+  member: PropTypes.object,
+  utils: PropTypes.instanceOf(Utils).isRequired
 }
 
 module.exports = Radium(Signature)
