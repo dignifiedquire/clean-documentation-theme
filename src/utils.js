@@ -58,7 +58,7 @@ module.exports = class Utils {
       return section.name
     }
 
-    if (section.returns) {
+    if (section.returns && section.returns.length > 0) {
       returns = `: ${this.formatType(section.returns[0].type)}`
     }
 
