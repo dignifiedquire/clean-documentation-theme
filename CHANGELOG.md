@@ -1,3 +1,19 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/dignifiedquire/clean-documentation-theme/compare/v0.4.2...v0.5.0) (2017-08-23)
+
+
+### Bug Fixes
+
+* **html:** force charset to be `utf-8` ([69e3a41](https://github.com/dignifiedquire/clean-documentation-theme/commit/69e3a41))
+* empty section returns ([dc05b1f](https://github.com/dignifiedquire/clean-documentation-theme/commit/dc05b1f))
+
+
+### Features
+
+* update to latest dependencies ([5e21ccf](https://github.com/dignifiedquire/clean-documentation-theme/commit/5e21ccf))
+
+
+
 <a name="0.4.2"></a>
 ## [0.4.2](https://github.com/dignifiedquire/clean-documentation-theme/compare/v0.4.1...v0.4.2) (2016-12-08)
 
