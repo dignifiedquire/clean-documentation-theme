@@ -1,3 +1,13 @@
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/dignifiedquire/clean-documentation-theme/compare/v0.5.0...v0.5.1) (2017-08-25)
+
+
+### Bug Fixes
+
+* updated github context ([01fca4e](https://github.com/dignifiedquire/clean-documentation-theme/commit/01fca4e))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/dignifiedquire/clean-documentation-theme/compare/v0.4.2...v0.5.0) (2017-08-23)
 
