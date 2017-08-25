@@ -17,8 +17,8 @@ const SourceLink = ({context}) => {
 
   return (
     <a
-      href={context.github}
-      title={context.path}
+      href={context.github.url}
+      title={context.github.path}
       style={style}>
       <GoCode />
     </a>

@@ -10,15 +10,17 @@ const SourceLink = require('../../lib/components/content/source-link')
 describe('<SourceLink />', () => {
   it('renders', () => {
     const context = {
-      github: 'github.com/source.js',
-      path: 'source.js'
+      github: {
+        url: 'github.com/source.js',
+        path: 'source.js'
+      }
     }
     const link = render(
       <SourceLink context={context} />
     ).find('a')
 
-    expect(link.attr('href')).to.be.eql(context.github)
-    expect(link.attr('title')).to.be.eql(context.path)
+    expect(link.attr('href')).to.be.eql(context.github.url)
+    expect(link.attr('title')).to.be.eql(context.github.path)
   })
 
   it('renders nothing if context is missing', () => {
