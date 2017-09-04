@@ -1,6 +1,6 @@
 {
   "name": "clean-documentation-theme",
-  "version": "0.5.2",
+  "version": "0.5.1",
   "description": "Theme for documentation.js",
   "main": "lib/index.js",
   "scripts": {
@@ -8,9 +8,9 @@
     "lint": "aegir lint",
     "build": "babel src -d lib",
     "dev": "babel src -d lib --watch",
-    "release": "npm run build && aegir release -t node",
-    "release-minor": "npm run build && aegir release -t node --type minor",
-    "release-major": "npm run build && aegir release -t node --type major",
+    "release": "npm run build && aegir release -t node --no-build --no-docs",
+    "release-minor": "npm run build && aegir release -t node --type minor --no-build --no-docs",
+    "release-major": "npm run build && aegir release -t node --type major --no-build --no-docs",
     "coverage": "nyc npm test"
   },
   "keywords": [
