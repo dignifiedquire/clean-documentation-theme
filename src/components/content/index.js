@@ -22,7 +22,7 @@ const Content = ({utils, docs}) => {
           section={section}
           description={section.description}
           utils={utils} />
-       ))}
+      ))}
     </div>
   )
 }

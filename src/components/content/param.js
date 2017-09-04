@@ -30,11 +30,9 @@ const ListItem = Radium(({
         defaultVal={defaultVal}
         utils={utils} />
     : &nbsp;
-    <div
-      style={descriptionStyle}
-      dangerouslySetInnerHTML={{
-        __html: utils.md(description, true)
-      }} />
+      <div
+        style={descriptionStyle}
+        dangerouslySetInnerHTML={{__html: utils.md(description, true)}} />
     </li>
   )
 })

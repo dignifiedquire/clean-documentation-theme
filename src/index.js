@@ -6,7 +6,6 @@ const vfs = require('vinyl-fs')
 const concat = require('concat-stream')
 const render = require('react-dom/server').renderToStaticMarkup
 const React = require('react')
-const _ = require('lodash')
 
 const Html = React.createFactory(require('./components/html.js'))
 const App = React.createFactory(require('./components/app.js'))
@@ -23,34 +22,16 @@ function pageTemplate (props) {
   return `<!doctype html>\n${html}`
 }
 
-function getProject (comments) {
-  if (!comments || !comments.length) {
-    return
-  }
-
-  const comment = _.find(comments, (c) => c.context && c.context.github)
-
-  if (comment === -1) {
-    return
-  }
-
-  const url = comment.context.github.url
-
-  // url is of the form
-  // https://github.com/libp2p/js-peer-id/blob/c1ed9751e34fabd3c7687cb6f8850aa68f63581f/src/index.js#L24-L141
-  return url.split('/').slice(0, 5).join('/')
-}
-
 module.exports = function (comments, options) {
   return new Promise((resolve) => {
-    options.project = getProject(comments)
+    options.project = options['project-homepage']
 
     // push assets into the pipeline as well.
     vfs.src([path.join(__dirname, '/assets/**')], { base: __dirname }).pipe(
       concat((files) => {
         resolve(files.concat(new File({
           path: 'index.html',
-          contents: new Buffer(pageTemplate({
+          contents: Buffer.from(pageTemplate({
             docs: comments,
             options: options
           }), 'utf8')

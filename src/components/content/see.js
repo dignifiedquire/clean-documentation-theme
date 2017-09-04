@@ -33,7 +33,7 @@ const See = ({tags, utils}) => {
                 __html: utils.md(remark.parse(link.description))
               }} />
           </li>
-         ))}
+        ))}
       </ul>
     </div>
   )

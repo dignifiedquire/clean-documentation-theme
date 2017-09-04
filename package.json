@@ -4,15 +4,14 @@
   "description": "Theme for documentation.js",
   "main": "lib/index.js",
   "scripts": {
-    "test": "npm run build && aegir-test --env node",
-    "lint": "aegir-lint",
+    "test": "npm run build && aegir test -t node",
+    "lint": "aegir lint",
     "build": "babel src -d lib",
     "dev": "babel src -d lib --watch",
-    "release": "npm run build && aegir-release --env node",
-    "release-minor": "npm run build && aegir-release --env node --type minor",
-    "release-major": "npm run build && aegir-release --env node --type major",
-    "coverage": "nyc npm test",
-    "coverage-publish": "aegir-coverage publish"
+    "release": "npm run build && aegir release -t node",
+    "release-minor": "npm run build && aegir release -t node --type minor",
+    "release-major": "npm run build && aegir release -t node --type major",
+    "coverage": "nyc npm test"
   },
   "keywords": [
     "doc",
@@ -28,7 +27,7 @@
   "dependencies": {
     "babel-plugin-transform-inline-imports-commonjs": "^1.2.0",
     "concat-stream": "^1.6.0",
-    "documentation": "^5.2.2",
+    "documentation": "^5.3.0",
     "documentation-theme-utils": "^3.0.0",
     "github-slugger": "^1.1.3",
     "highlight.js": "^9.12.0",
@@ -44,12 +43,12 @@
     "vinyl-fs": "^2.4.4"
   },
   "devDependencies": {
-    "aegir": "^11.0.2",
+    "aegir": "^12.0.2",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
-    "chai": "^4.1.1",
+    "chai": "^4.1.2",
     "enzyme": "^2.9.1",
     "eslint-config-standard-react": "^5.0.0",
     "eslint-plugin-react": "^7.3.0",

@@ -59,7 +59,7 @@ const Section = ({
           utils={utils}
           parent={name}
           members={members[type]} />
-       ))}
+      ))}
     </div>
   )
 }

@@ -31,7 +31,7 @@ const Params = ({params, utils}) => {
             description={param.description}
             properties={param.properties}
             utils={utils} />
-         ))}
+        ))}
       </ol>
     </div>
   )

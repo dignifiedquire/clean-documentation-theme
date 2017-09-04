@@ -145,7 +145,7 @@ const Item = Radium(({name, members, last, namespace, utils}) => {
         <li style={[style, membersStyle]}>
           {membersElements}
         </li>
-       ) : null}
+      ) : null}
     </div>
   )
 })
@@ -191,7 +191,7 @@ const Nav = ({items, utils}) => {
             namespace={doc.namespace}
             last={i === (items.length - 1)}
             utils={utils} />
-         ))}
+        ))}
       </ul>
     </div>
   )

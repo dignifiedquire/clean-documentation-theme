@@ -16,15 +16,13 @@ const Throws = ({list, utils}) => {
       <h4>Throws</h4>
       {list.map((ret, i) => (
         <div key={i}>
-          <code
-            dangerouslySetInnerHTML={{
-              __html: utils.formatType(ret.type)
-            }} />{ret.description ? (
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: ' ' + utils.md(ret.description, true)
-                }} />
-             ) : null}
+          <code dangerouslySetInnerHTML={{__html: utils.formatType(ret.type)}} />
+          {ret.description ? (
+            <span
+              dangerouslySetInnerHTML={{
+                __html: ' ' + utils.md(ret.description, true)
+              }} />
+          ) : null}
         </div>
       ))}
     </div>

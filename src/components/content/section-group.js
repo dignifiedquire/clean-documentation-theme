@@ -31,7 +31,7 @@ const SectionGroup = ({name, utils, members, parent}) => {
           parent={displayParent}
           member={m}
           utils={utils} />
-       ))}
+      ))}
     </div>
   )
 }
