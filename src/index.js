@@ -24,6 +24,8 @@ function pageTemplate (props) {
 
 module.exports = function (comments, options) {
   return new Promise((resolve) => {
+    options.name = options['project-name']
+    options.version = options['project-version']
     options.project = options['project-homepage']
 
     // push assets into the pipeline as well.
